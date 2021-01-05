@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+.allMoney {
+  color: red;
+}
+
+.noMoney {
+  color: rgb(45, 214, 59);
+}
