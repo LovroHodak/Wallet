@@ -1,0 +1,16 @@
+.input-forms{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inputs{
+    min-width: 300px;
+    width: 50%;
+    font-size: 30px;
+    margin: 5px auto;
+}
+
+.mapedSpec {
+    border: 1px solid black;
+}

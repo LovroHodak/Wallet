@@ -1,4 +1,5 @@
 import React from "react";
+import "./AddIncome.css";
 
 export default function AddIncome(props) {
   
@@ -18,23 +19,26 @@ export default function AddIncome(props) {
 
   return (
     <div>
-      <form onSubmit={addMoney} >
-        <input name="amount" type="text" placeholder="type amount" />
-        <input name="name" type="text" placeholder="type name" />
-        <input name="date" type="text" placeholder="type date" />
-        <button  type='submit'>Add Money</button>
+      <form onSubmit={addMoney} className='input-forms'>
+        <input name="amount" type="text" placeholder="type amount €" className='inputs' />
+        <input name="name" type="text" placeholder="type name" className='inputs'/>
+        <input name="date" type="text" placeholder="type date" className='inputs'/>
+        <button  type='submit' className='inputs'>Add Money</button>
       </form>
+
       <div>
-        <h2>All added money so far: {props.addedMoney}</h2>
-      </div>
-      <div>
-        <h2>Testing: {props.moneyFlow.map((transfer, i) => {
+        <h2>Last added money: </h2>{props.moneyFlow.map((transfer, i) => {
           return (
-            <div key={i} >
-              <p>{i + 1}) How much: {transfer.amount}. Why: {transfer.name}. Date: {transfer.date}</p>
+            <div key={i} className='mapedSpec' >
+              <p>Amount: <b>{transfer.amount}</b> €</p>
+              <p>Name: <b>{transfer.name}</b></p>
+              <p>Date: <b>{transfer.date}</b></p>
             </div>
             )
-        })}</h2>
+        })}
+      </div>
+      <div>
+        <h2>All money added so far: {props.addedMoney}</h2>
       </div>
     </div>
   );

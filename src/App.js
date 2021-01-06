@@ -7,12 +7,18 @@ import Zajeb from "./components/Zajeb";
 import { Switch, Route, withRouter, Link } from "react-router-dom";
 
 function App() {
+  // STATES
+  // App
   const [showAlert, setShowAlert] = useState(false)
   const [myMoney, setMyMoney] = useState(0);
+  // AddMoney
   const [addedMoney, setAddedMoney] = useState(0)
-  const [myHrana, setMyHrana] = useState(0);
-  const [myZajeb, setMyZajeb] = useState(0);
   const [moneyFlow, setMoneyFlow] = useState([])
+  // Hrana
+  const [myHrana, setMyHrana] = useState(0);
+  // Zajeb
+  const [myZajeb, setMyZajeb] = useState(0);
+  
 
 
   const showNoMoney = () => {
