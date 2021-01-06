@@ -1,4 +1,5 @@
 import React from "react";
+import "./Hrana.css";
 
 export default function Hrana(props) {
   const addHrana = (e) => {
@@ -10,13 +11,13 @@ export default function Hrana(props) {
   };
 
   return (
-    <div>
-      <form onSubmit={addHrana}>
-        <input name="adding" type="text" placeholder="add hrana money amount" />
-        <button type="submit">enter</button>
+    <div className='hranaDiv'>
+      <form onSubmit={addHrana} className='formFood'>
+        <input name="adding" type="text" placeholder="add food amount €" className='inputFood' />
+        <button type="submit" className='buttonFood'>enter</button>
       </form>
       <div>
-        <h2>My food so far: {props.myHrana}</h2>
+        <h2>My food so far: {props.myHrana}€</h2>
       </div>
     </div>
   );

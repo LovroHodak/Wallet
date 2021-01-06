@@ -1,0 +1,15 @@
+.grid-container-expenses {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+    background-color: #8ba8c0;
+    padding: 10px;
+}
+
+.itemEx {
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+    border: 2px solid black;
+}

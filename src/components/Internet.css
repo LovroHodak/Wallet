@@ -1,0 +1,23 @@
+.formInternet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inputInternet {
+    min-width: 300px;
+    width: 50%;
+    font-size: 30px;
+    margin: 5px auto;
+}
+
+.buttonInternet {
+    min-width: 300px;
+    width: 50%;
+    font-size: 30px;
+    margin: 5px auto;
+}
+
+.mapedSpecInternet {
+    border: 1px solid black;
+}

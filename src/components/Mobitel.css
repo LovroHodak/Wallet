@@ -1,0 +1,23 @@
+.formMobitel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inputMobitel {
+    min-width: 300px;
+    width: 50%;
+    font-size: 30px;
+    margin: 5px auto;
+}
+
+.buttonMobitel {
+    min-width: 300px;
+    width: 50%;
+    font-size: 30px;
+    margin: 5px auto;
+}
+
+.mapedSpecMobitel {
+    border: 1px solid black;
+}

@@ -7,15 +7,15 @@ export default function Home() {
         <div className='homeLayout'>
             <h1>Welcome to Your Wallet!</h1>
             <div className='grid-container'>
-                <div className='item'><Link to='/hrana' style={{ textDecoration: 'none' }}>Hrana</Link></div>
-                <div className='item'><Link to='/zajeb' style={{ textDecoration: 'none' }}>Zajeb</Link></div>
-                <div className='item'><Link to='/tobak' style={{ textDecoration: 'none' }}>Tobak</Link></div>
-                <div className='item'><Link to='/stroski' style={{ textDecoration: 'none' }}>Stroski</Link></div>
-                <div className='item'><Link to='/drugo' style={{ textDecoration: 'none' }}>Drugo</Link></div>
-                <div className='item'><Link to='/dopust' style={{ textDecoration: 'none' }}>Dopust</Link></div>
+                <Link to='/hrana' style={{ textDecoration: 'none' }}><div className='item'>Food</div></Link>
+                <Link to='/zajeb' style={{ textDecoration: 'none' }}><div className='item'>Fuck It</div></Link>
+                <Link to='/tobaco' style={{ textDecoration: 'none' }}><div className='item'>Tobaco</div></Link>
+                <Link to='/expenses' style={{ textDecoration: 'none' }}><div className='item'>Expenses</div></Link>
+                <Link to='/other' style={{ textDecoration: 'none' }}><div className='item'>Other</div></Link>
+                <Link to='/vacation' style={{ textDecoration: 'none' }}><div className='item'>Vacation</div></Link>
             </div>
 
-            <h2><Link to='/addIncome' style={{ textDecoration: 'none' }}>Add Money to your account</Link></h2>
+            <Link to='/addIncome' style={{ textDecoration: 'none' }}><h2>Add Money to your account</h2></Link>
         </div>
     )
 }

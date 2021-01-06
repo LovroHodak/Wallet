@@ -1,0 +1,23 @@
+.formE2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inputE2 {
+    min-width: 300px;
+    width: 50%;
+    font-size: 30px;
+    margin: 5px auto;
+}
+
+.buttonE2 {
+    min-width: 300px;
+    width: 50%;
+    font-size: 30px;
+    margin: 5px auto;
+}
+
+.mapedSpecE2 {
+    border: 1px solid black;
+}

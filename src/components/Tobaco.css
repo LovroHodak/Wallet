@@ -1,0 +1,23 @@
+/* .tobacoDiv{
+    min-height: 540px;
+} */
+
+.formTobaco{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inputTobaco {
+    min-width: 300px;
+    width: 50%;
+    font-size: 30px;
+    margin: 20px 0 5px 0;
+}
+
+.buttonTobaco{
+    min-width: 300px;
+    width: 50%;
+    font-size: 30px;
+    margin: 5px auto;
+}

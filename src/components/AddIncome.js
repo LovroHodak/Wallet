@@ -9,7 +9,7 @@ export default function AddIncome(props) {
     let amount = Number(e.target.amount.value)
     let name = String(e.target.name.value)
     let date = String(e.target.date.value)
-    props.setMoneyFlow([...props.moneyFlow, {amount, name, date}])
+    props.setMoneyFlow([{amount, name, date}, ...props.moneyFlow])
     let allAddedMoney = Number(props.addedMoney)
     props.setAddedMoney(allAddedMoney + amount)
     let myMoneyNumber = Number(props.myMoney);

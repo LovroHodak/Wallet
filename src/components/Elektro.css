@@ -1,0 +1,23 @@
+.formElektro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inputElektro {
+    min-width: 300px;
+    width: 50%;
+    font-size: 30px;
+    margin: 5px auto;
+}
+
+.buttonElektro {
+    min-width: 300px;
+    width: 50%;
+    font-size: 30px;
+    margin: 5px auto;
+}
+
+.mapedSpecElektro {
+    border: 1px solid black;
+}
