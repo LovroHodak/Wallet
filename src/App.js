@@ -12,15 +12,15 @@ function App() {
   const [addedMoney, setAddedMoney] = useState(0)
   const [myHrana, setMyHrana] = useState(0);
   const [myZajeb, setMyZajeb] = useState(0);
+  const [moneyFlow, setMoneyFlow] = useState([])
 
 
   const showNoMoney = () => {
-    if (myMoney === 0){
+    if (myMoney <= 0){
       setShowAlert(true)
     } else {
       setShowAlert(false)
     }
-    console.log(myMoney)
   }
 
   useEffect(() => {
@@ -30,11 +30,9 @@ function App() {
 
   return (
     <div className="App">
-      <Link to="/">
-        <h1 className="allMoney">Money in Wallet: {myMoney}€</h1>
-      </Link>
+
       {
-        showAlert ? (<h1 className="noMoney">You have no money!</h1>) : null
+        showAlert ? (<div className="noMoney"><h1>You have no money!</h1></div>) : null
       }
       <Switch>
         <Route
@@ -54,6 +52,8 @@ function App() {
                 myMoney={myMoney}
                 setMyMoney={setMyMoney}
                 {...routeProps}
+                moneyFlow={moneyFlow}
+                setMoneyFlow={setMoneyFlow}
               />
             );
           }}
@@ -87,6 +87,9 @@ function App() {
           }}
         />
       </Switch>
+      <Link to="/" style={{ textDecoration: 'none' }}>
+        <div><h1 className="allMoney">Money in Wallet: {myMoney}€</h1></div>
+      </Link>
     </div>
   );
 }
