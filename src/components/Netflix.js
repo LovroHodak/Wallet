@@ -4,8 +4,6 @@ import "./Netflix.css";
 export default function Netflix(props) {
   const addNetflix = (e) => {
     e.preventDefault();
-    console.log(props);
-    console.log(e.target.amount.value);
     let amount = Number(e.target.amount.value);
     props.setNetflix(props.netflix + amount);
     props.setMyMoney(props.myMoney - amount);

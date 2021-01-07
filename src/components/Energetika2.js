@@ -4,8 +4,6 @@ import "./Energetika2.css";
 export default function Energetika2(props) {
   const addEnergetika2 = (e) => {
     e.preventDefault();
-    console.log(props);
-    console.log(e.target.amount.value);
     let amount = Number(e.target.amount.value);
     props.setEnergetika2(props.energetika2 + amount);
     props.setMyMoney(props.myMoney - amount);

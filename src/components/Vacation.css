@@ -1,0 +1,23 @@
+.formVacation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inputVacation {
+    min-width: 300px;
+    width: 50%;
+    font-size: 30px;
+    margin: 5px auto;
+}
+
+.buttonVacation {
+    min-width: 300px;
+    width: 50%;
+    font-size: 30px;
+    margin: 5px auto;
+}
+
+.mapedSpecVacation {
+    border: 1px solid black;
+}

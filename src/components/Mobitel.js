@@ -4,8 +4,6 @@ import "./Mobitel.css";
 export default function Mobitel(props) {
   const addMobitel = (e) => {
     e.preventDefault();
-    console.log(props);
-    console.log(e.target.amount.value);
     let amount = Number(e.target.amount.value);
     props.setMobitel(props.mobitel + amount);
     props.setMyMoney(props.myMoney - amount);

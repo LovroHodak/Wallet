@@ -5,8 +5,6 @@ export default function ExLora2(props) {
 
     const addLora2 = (e) => {
         e.preventDefault();
-        console.log(props);
-        console.log(e.target.amount.value);
         let amount = Number(e.target.amount.value);
         props.setMyExLora2(props.myExLora2 + amount);
         props.setMyMoney(props.myMoney - amount);

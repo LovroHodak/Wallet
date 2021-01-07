@@ -4,8 +4,6 @@ import "./Elektro.css";
 export default function Elektro(props) {
   const addElektro = (e) => {
     e.preventDefault();
-    console.log(props);
-    console.log(e.target.amount.value);
     let amount = Number(e.target.amount.value);
     props.setElektro(props.elektro + amount);
     props.setMyMoney(props.myMoney - amount);

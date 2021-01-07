@@ -4,8 +4,6 @@ import './ExLora1.css'
 export default function ExLora1(props) {
   const addLora1 = (e) => {
     e.preventDefault();
-    console.log(props);
-    console.log(e.target.amount.value);
     let amount = Number(e.target.amount.value);
     props.setMyExLora1(props.myExLora1 + amount);
     props.setMyMoney(props.myMoney - amount);

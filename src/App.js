@@ -15,6 +15,8 @@ import Rtv from "./components/Rtv";
 import Internet from "./components/Internet";
 import Mobitel from "./components/Mobitel";
 import Netflix from "./components/Netflix";
+import Other from "./components/Other";
+import Vacation from "./components/Vacation";
 import { Switch, Route, withRouter, Link } from "react-router-dom";
 
 function App() {
@@ -60,6 +62,12 @@ function App() {
   // Netflix
   const [netflix, setNetflix] = useState(0);
   const [netflixFlow, setNetflixFlow] = useState([]);
+  // Other
+  const [other, setOther] = useState(0);
+  const [otherFlow, setOtherFlow] = useState([]);
+  // Vacation
+  const [vacation, setVacation] = useState(0);
+  const [vacationFlow, setVacationFlow] = useState([]);
 
   const showNoMoney = () => {
     if (myMoney <= 0) {
@@ -321,6 +329,38 @@ function App() {
                 setMyMoney={setMyMoney}
                 myExpenses={myExpenses}
                 setMyExpenses={setMyExpenses}
+                {...routeProps}
+              />
+            );
+          }}
+        />
+        <Route
+          path="/other"
+          render={(routeProps) => {
+            return (
+              <Other
+                myMoney={myMoney}
+                setMyMoney={setMyMoney}
+                other={other}
+                setOther={setOther}
+                otherFlow={otherFlow}
+                setOtherFlow={setOtherFlow}
+                {...routeProps}
+              />
+            );
+          }}
+        />
+        <Route
+          path="/vacation"
+          render={(routeProps) => {
+            return (
+              <Vacation
+                myMoney={myMoney}
+                setMyMoney={setMyMoney}
+                vacation={vacation}
+                setVacation={setVacation}
+                vacationFlow={vacationFlow}
+                setVacationFlow={setVacationFlow}
                 {...routeProps}
               />
             );

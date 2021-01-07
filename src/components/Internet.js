@@ -4,8 +4,6 @@ import "./Internet.css";
 export default function Internet(props) {
   const addInternet = (e) => {
     e.preventDefault();
-    console.log(props);
-    console.log(e.target.amount.value);
     let amount = Number(e.target.amount.value);
     props.setInternet(props.internet + amount);
     props.setMyMoney(props.myMoney - amount);

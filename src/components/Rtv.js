@@ -4,8 +4,6 @@ import "./Rtv.css";
 export default function Rtv(props) {
   const addRtv = (e) => {
     e.preventDefault();
-    console.log(props);
-    console.log(e.target.amount.value);
     let amount = Number(e.target.amount.value);
     props.setRtv(props.rtv + amount);
     props.setMyMoney(props.myMoney - amount);
