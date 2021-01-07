@@ -36,11 +36,11 @@ function App() {
   // Expenses
   const [myExpenses, setMyExpenses] = useState(0);
   // ExLora1
-  const [myExLora1, setMyExLora1] = useState(0);
-  const [lora1Flow, setLora1Flow] = useState([]);
+  const [exLora1, setExLora1] = useState(0);
+  const [exLora1Flow, setExLora1Flow] = useState([]);
   // ExLora2
-  const [myExLora2, setMyExLora2] = useState(0);
-  const [lora2Flow, setLora2Flow] = useState([]);
+  const [exLora2, setExLora2] = useState(0);
+  const [exLora2Flow, setExLora2Flow] = useState([]);
   // Energetika1
   const [energetika1, setEnergetika1] = useState(0);
   const [energetika1Flow, setEnergetika1Flow] = useState([]);
@@ -170,10 +170,10 @@ function App() {
           render={(routeProps) => {
             return (
               <ExLora1
-                myExLora1={myExLora1}
-                setMyExLora1={setMyExLora1}
-                lora1Flow={lora1Flow}
-                setLora1Flow={setLora1Flow}
+                exLora1={exLora1}
+                setExLora1={setExLora1}
+                exLora1Flow={exLora1Flow}
+                setExLora1Flow={setExLora1Flow}
                 myMoney={myMoney}
                 setMyMoney={setMyMoney}
                 myExpenses={myExpenses}
@@ -189,10 +189,10 @@ function App() {
           render={(routeProps) => {
             return (
               <ExLora2
-                myExLora2={myExLora2}
-                setMyExLora2={setMyExLora2}
-                lora2Flow={lora2Flow}
-                setLora2Flow={setLora2Flow}
+                exLora2={exLora2}
+                setExLora2={setExLora2}
+                exLora2Flow={exLora2Flow}
+                setExLora2Flow={setExLora2Flow}
                 myMoney={myMoney}
                 setMyMoney={setMyMoney}
                 myExpenses={myExpenses}

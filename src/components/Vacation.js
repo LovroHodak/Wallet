@@ -5,13 +5,35 @@ export default function Vacation(props) {
     const addVacation = (e) => {
         e.preventDefault();
         let amount = Number(e.target.amount.value);
+        let propsvacationFlow = props.vacationFlow;
         props.setVacation(props.vacation + amount);
         props.setMyMoney(props.myMoney - amount);
         let date = String(e.target.date.value);
         let name = String(e.target.name.value);
-        props.setVacationFlow([{ amount, date, name }, ...props.vacationFlow]);
+        let id = propsvacationFlow.length;
+        props.setVacationFlow([{ amount, date, name, id }, ...props.vacationFlow]);
         props.history.push("/");
       };
+
+      const deleteVacation = (vacationId) => {
+        let filteredVacations = props.vacationFlow.filter((vac) => {
+          return vac.id !== vacationId;
+        });
+        props.setVacationFlow(filteredVacations);
+        let vacationsAmount = filteredVacations.reduce(function (
+          accumulator,
+          currentValue
+        ) {
+          return accumulator + currentValue.amount;
+        },
+        0);
+        let propsvacationFlow = props.vacationFlow;
+        let allVacations = propsvacationFlow.reduce(function (accumulator, currentValue) {
+          return accumulator + currentValue.amount;
+        }, 0);
+        props.setVacation(vacationsAmount);
+        props.setMyMoney(props.myMoney + allVacations - vacationsAmount);
+      }
     
       return (
         <div>
@@ -40,9 +62,9 @@ export default function Vacation(props) {
           </form>
           <div>
             <h2>Last added: </h2>
-            {props.vacationFlow.map((transfer, i) => {
+            {props.vacationFlow.map((transfer) => {
               return (
-                <div key={i} className="mapedSpecVacation">
+                <div key={transfer.id} className="mapedSpecVacation">
                   <p>
                     Amount: <b>{transfer.amount}</b> €
                   </p>
@@ -52,6 +74,7 @@ export default function Vacation(props) {
                   <p>
                     Date: <b>{transfer.date}</b>
                   </p>
+                  <button onClick={() => deleteVacation(transfer.id)} className='deleteButtonVacation' >Delete</button>
                 </div>
               );
             })}

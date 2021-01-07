@@ -5,13 +5,36 @@ export default function Energetika1(props) {
   const addEnergetika1 = (e) => {
     e.preventDefault();
     let amount = Number(e.target.amount.value);
+    let propsenergetika1Flow = props.energetika1Flow;
     props.setEnergetika1(props.energetika1 + amount);
     props.setMyMoney(props.myMoney - amount);
     props.setMyExpenses(props.myExpenses + amount);
     let date = String(e.target.date.value);
-    props.setEnergetika1Flow([{ amount, date }, ...props.energetika1Flow]);
+    let id = propsenergetika1Flow.length;
+    props.setEnergetika1Flow([{ amount, date, id }, ...props.energetika1Flow]);
     props.history.push("/expenses");
   };
+
+  const deleteEnergetika1 = (energetika1Id) => {
+    let filteredEnergetika1s = props.energetika1Flow.filter((lo1) => {
+      return lo1.id !== energetika1Id;
+    });
+    props.setEnergetika1Flow(filteredEnergetika1s);
+    let energetika1sAmount = filteredEnergetika1s.reduce(function (
+      accumulator,
+      currentValue
+    ) {
+      return accumulator + currentValue.amount;
+    },
+    0);
+    let propsenergetika1Flow = props.energetika1Flow;
+    let allEnergetika1s = propsenergetika1Flow.reduce(function (accumulator, currentValue) {
+      return accumulator + currentValue.amount;
+    }, 0);
+    props.setEnergetika1(energetika1sAmount);
+    props.setMyMoney(props.myMoney + allEnergetika1s - energetika1sAmount);
+    props.setMyExpenses(props.myExpenses - allEnergetika1s + energetika1sAmount)
+  }
 
   return (
     <div>
@@ -34,15 +57,16 @@ export default function Energetika1(props) {
       </form>
       <div>
         <h2>Last added: </h2>
-        {props.energetika1Flow.map((transfer, i) => {
+        {props.energetika1Flow.map((transfer) => {
           return (
-            <div key={i} className="mapedSpecE1">
+            <div key={transfer.id} className="mapedSpecE1">
               <p>
                 Amount: <b>{transfer.amount}</b> €
               </p>
               <p>
                 Date: <b>{transfer.date}</b>
               </p>
+              <button onClick={() => deleteEnergetika1(transfer.id)} className='deleteButtonEnergetika1' >Delete</button>
             </div>
           );
         })}

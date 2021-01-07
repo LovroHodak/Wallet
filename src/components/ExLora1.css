@@ -21,3 +21,8 @@
 .mapedSpecExL1 {
     border: 1px solid black;
 }
+
+.deleteButtonExLora1 {
+    font-size: 20px;
+    margin: 5px auto;
+}

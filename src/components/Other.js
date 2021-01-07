@@ -62,9 +62,9 @@ export default function Other(props) {
       </form>
       <div>
         <h2>Last added: </h2>
-        {props.otherFlow.map((transfer, i) => {
+        {props.otherFlow.map((transfer) => {
           return (
-            <div key={i} className="mapedSpecOther">
+            <div key={transfer.id} className="mapedSpecOther">
               <p>
                 Amount: <b>{transfer.amount}</b> €
               </p>
@@ -74,7 +74,6 @@ export default function Other(props) {
               <p>
                 Date: <b>{transfer.date}</b>
               </p>
-              <p>{transfer.id}</p>
               <button onClick={() => deleteOther(transfer.id)} className='deleteButtonOther' >Delete</button>
             </div>
           );
