@@ -5,12 +5,34 @@ export default function Other(props) {
   const addOther = (e) => {
     e.preventDefault();
     let amount = Number(e.target.amount.value);
+    let propsotherFlow = props.otherFlow;
     props.setOther(props.other + amount);
     props.setMyMoney(props.myMoney - amount);
     let date = String(e.target.date.value);
     let name = String(e.target.name.value);
-    props.setOtherFlow([{ amount, date, name }, ...props.otherFlow]);
+    let id = propsotherFlow.length;
+    props.setOtherFlow([{ amount, date, name, id }, ...propsotherFlow]);
     props.history.push("/");
+  };
+
+  const deleteOther = (otherId) => {
+    let filteredOthers = props.otherFlow.filter((oth) => {
+      return oth.id !== otherId;
+    });
+    props.setOtherFlow(filteredOthers);
+    let othersAmount = filteredOthers.reduce(function (
+      accumulator,
+      currentValue
+    ) {
+      return accumulator + currentValue.amount;
+    },
+    0);
+    let propsotherFlow = props.otherFlow;
+    let allOthers = propsotherFlow.reduce(function (accumulator, currentValue) {
+      return accumulator + currentValue.amount;
+    }, 0);
+    props.setOther(othersAmount);
+    props.setMyMoney(props.myMoney + allOthers - othersAmount);
   };
 
   return (
@@ -52,6 +74,8 @@ export default function Other(props) {
               <p>
                 Date: <b>{transfer.date}</b>
               </p>
+              <p>{transfer.id}</p>
+              <button onClick={() => deleteOther(transfer.id)} className='deleteButtonOther' >Delete</button>
             </div>
           );
         })}
