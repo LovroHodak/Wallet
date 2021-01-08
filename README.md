@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+Front-End-React WALLET
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a personalized wallet.
 
-## Available Scripts
+1) homePage-Alert - no money (if the amount on your account is 0 or less you will get this alert) Go to Add Money to your account, add some money and Alert will be gone.-6 categories, category Expenses has sub-categories
+-at the bottom of app no matter where you are will be displayed your current money in wallet (if you are adding money to your account your value will go up, if you will be spending it your amount will go down)
 
-In the project directory, you can run:
+2) add Money to your account
+-you type amount and type, and automatically get time-stamp
+-after clicking add money you will be redirected to homePage, but you will also start a flow of your transactions on AddMoney page. So if you visit addMoney again you will see your history
+-at the bottom of addMoney you will see all the money added so far-once you have flow you will also get the Delete button. If you choose to delete your addMoney-input it will change the value of All Money Added so far on this page as well as Money In Wallet(which renders through all pages)
 
-### `npm start`
+3) Money in Wallet is a Link to home page
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+4) Food (same goes for FuckIt and Tobaco)(same goes for Other and Vacation only difference is that those two values have another property of Name in flow)
+-you type amount, and automatically get time-stamp
+-after clicking enter you will be redirected to homePage, but you will also start a flow of your transactions on Food page. So if you visit Food again you will see your history
+-at the bottom of Food you will see all the money added so far
+-once you have flow you will also get the Delete button. If you choose to delete your Food-input it will change the value of My Hrana so far on this page as well as Money In Wallet(which renders through all pages)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+5) Expenses
+-once you click Expenses you get 9 sub-categories
+-at the bottom of that page you will get All expenses so far
+-so each sub-category influences its own state, state of All expenses and Money in wallet
+-when you enter one sub-category(it goes the same for all)-
+--you type amount, and automatically get time-stamp-
+--after clicking enter you will be redirected to Expenses, but you will also start a flow of your transactions on your sub-category page. So if you visit that sub-category again you will see your history
+--at the bottom of sub-category you will see all the money added so far
+--once you have flow you will also get the Delete button. If you choose to delete your sub-category-input it will change the value of that sub-category as well as All Expenses so far as well as Money In Wallet(which renders through all pages)
 
-### `npm test`
+6) Clicking delete button will leave you on the same page
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+About this project + what to change.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+I wanted to practice my knowledge of using functional components. I was using useState and useEffect.I started with slo language and than changed to eng so some components still have slo names (hrana = food, zajeb = fuckIt)I was practicing my knowledge of targeting inputs. I am using changes in flow properties to influence my states. I realized that in the middle of my project so the code is not the cleanest.

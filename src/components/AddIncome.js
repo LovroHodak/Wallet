@@ -7,7 +7,11 @@ export default function AddIncome(props) {
     let amount = Number(e.target.amount.value);
     let propsmoneyFlow = props.moneyFlow;
     let name = String(e.target.name.value);
-    let date = String(e.target.date.value);
+    let date = new Date();
+    let dd = String(date.getDate()).padStart(2, "0");
+    let mm = String(date.getMonth() + 1).padStart(2, "0"); //January is 0!
+    let yyyy = date.getFullYear();
+    date = dd + "/" + mm + "/" + yyyy;
     let id = propsmoneyFlow.length;
     props.setMoneyFlow([{ amount, name, date, id }, ...props.moneyFlow]);
     let allAddedMoney = Number(props.addedMoney);
@@ -51,12 +55,6 @@ export default function AddIncome(props) {
           name="name"
           type="text"
           placeholder="type name"
-          className="inputs"
-        />
-        <input
-          name="date"
-          type="text"
-          placeholder="type date"
           className="inputs"
         />
         <button type="submit" className="inputs">
