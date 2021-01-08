@@ -29,10 +29,13 @@ function App() {
   const [moneyFlow, setMoneyFlow] = useState([]);
   // Hrana
   const [myHrana, setMyHrana] = useState(0);
+  const [hranaFlow, setHranaFlow] = useState([]);
   // Zajeb
   const [myZajeb, setMyZajeb] = useState(0);
+  const [zajebFlow, setZajebFlow] = useState([]);
   // Tobaco
   const [myTobaco, setMyTobaco] = useState(0);
+  const [tobacoFlow, setTobacoFlow] = useState([]);
   // Expenses
   const [myExpenses, setMyExpenses] = useState(0);
   // ExLora1
@@ -122,6 +125,8 @@ function App() {
                 setMyMoney={setMyMoney}
                 myHrana={myHrana}
                 setMyHrana={setMyHrana}
+                hranaFlow={hranaFlow}
+                setHranaFlow={setHranaFlow}
                 {...routeProps}
               />
             );
@@ -136,6 +141,8 @@ function App() {
                 setMyMoney={setMyMoney}
                 myZajeb={myZajeb}
                 setMyZajeb={setMyZajeb}
+                zajebFlow={zajebFlow}
+                setZajebFlow={setZajebFlow}
                 {...routeProps}
               />
             );
@@ -150,6 +157,8 @@ function App() {
                 setMyMoney={setMyMoney}
                 myTobaco={myTobaco}
                 setMyTobaco={setMyTobaco}
+                tobacoFlow={tobacoFlow}
+                setTobacoFlow={setTobacoFlow}
                 {...routeProps}
               />
             );

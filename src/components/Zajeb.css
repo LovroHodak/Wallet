@@ -21,3 +21,12 @@
     font-size: 30px;
     margin: 5px auto;
 }
+
+.mapedSpecZajeb {
+    border: 1px solid black;
+}
+
+.deleteButtonZajeb {
+    font-size: 20px;
+    margin: 5px auto;
+}

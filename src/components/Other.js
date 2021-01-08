@@ -18,6 +18,7 @@ export default function Other(props) {
     let name = String(e.target.name.value);
     let id = propsotherFlow.length;
     props.setOtherFlow([{ amount, date, name, id }, ...propsotherFlow]);
+    
     props.history.push("/");
   };
 

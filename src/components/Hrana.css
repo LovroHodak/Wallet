@@ -2,22 +2,31 @@
     min-height: 540px;
 } */
 
-.formFood{
+.formHrana{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.inputFood {
+.inputHrana {
     min-width: 300px;
     width: 50%;
     font-size: 30px;
     margin: 20px 0 5px 0;
 }
 
-.buttonFood{
+.buttonHrana{
     min-width: 300px;
     width: 50%;
     font-size: 30px;
+    margin: 5px auto;
+}
+
+.mapedSpecHrana {
+    border: 1px solid black;
+}
+
+.deleteButtonHrana {
+    font-size: 20px;
     margin: 5px auto;
 }

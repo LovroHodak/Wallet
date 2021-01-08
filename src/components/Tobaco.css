@@ -21,3 +21,12 @@
     font-size: 30px;
     margin: 5px auto;
 }
+
+.mapedSpecTobaco {
+    border: 1px solid black;
+}
+
+.deleteButtonTobaco {
+    font-size: 20px;
+    margin: 5px auto;
+}
