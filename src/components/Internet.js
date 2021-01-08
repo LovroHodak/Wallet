@@ -9,7 +9,11 @@ export default function Internet(props) {
     props.setInternet(props.internet + amount);
     props.setMyMoney(props.myMoney - amount);
     props.setMyExpenses(props.myExpenses + amount);
-    let date = String(e.target.date.value);
+    let date = new Date();
+    let dd = String(date.getDate()).padStart(2, "0");
+    let mm = String(date.getMonth() + 1).padStart(2, "0"); //January is 0!
+    let yyyy = date.getFullYear();
+    date = dd + "/" + mm + "/" + yyyy;
     let id = propsinternetFlow.length;
     props.setInternetFlow([{ amount, date, id }, ...props.internetFlow]);
     props.history.push("/expenses");
@@ -43,12 +47,6 @@ export default function Internet(props) {
           name="amount"
           type="text"
           placeholder="type Internet €"
-          className="inputInternet"
-        />
-        <input
-          name="date"
-          type="text"
-          placeholder="type date"
           className="inputInternet"
         />
         <button type="submit" className="buttonInternet">

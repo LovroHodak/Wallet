@@ -9,9 +9,13 @@ export default function ExLora1(props) {
     props.setExLora1(props.exLora1 + amount);
     props.setMyMoney(props.myMoney - amount);
     props.setMyExpenses(props.myExpenses + amount)
-    let dateL1 = String(e.target.date.value)
+    let date = new Date();
+    let dd = String(date.getDate()).padStart(2, "0");
+    let mm = String(date.getMonth() + 1).padStart(2, "0"); //January is 0!
+    let yyyy = date.getFullYear();
+    date = dd + "/" + mm + "/" + yyyy;
     let id = propsexLora1Flow.length;
-    props.setExLora1Flow([{amount, dateL1, id}, ...props.exLora1Flow])
+    props.setExLora1Flow([{amount, date, id}, ...props.exLora1Flow])
     props.history.push("/expenses");
   };
 
@@ -40,7 +44,6 @@ export default function ExLora1(props) {
     <div>
       <form onSubmit={addLora1} className='formExL1'>
         <input name="amount" type="text" placeholder="type Lora1 €" className='inputExL1'/>
-        <input name="date" type="text" placeholder="type date" className='inputExL1' />
         <button type="submit" className='buttonExL1'>Save</button>
       </form>
       <div>
@@ -52,7 +55,7 @@ export default function ExLora1(props) {
                 Amount: <b>{transfer.amount}</b> €
               </p>
               <p>
-                Date: <b>{transfer.dateL1}</b>
+                Date: <b>{transfer.date}</b>
               </p>
               <button onClick={() => deleteExLora1(transfer.id)} className='deleteButtonExLora1' >Delete</button>
             </div>

@@ -9,7 +9,11 @@ export default function Netflix(props) {
     props.setNetflix(props.netflix + amount);
     props.setMyMoney(props.myMoney - amount);
     props.setMyExpenses(props.myExpenses + amount);
-    let date = String(e.target.date.value);
+    let date = new Date();
+    let dd = String(date.getDate()).padStart(2, "0");
+    let mm = String(date.getMonth() + 1).padStart(2, "0"); //January is 0!
+    let yyyy = date.getFullYear();
+    date = dd + "/" + mm + "/" + yyyy;
     let id = propsnetflixFlow.length;
     props.setNetflixFlow([{ amount, date, id }, ...props.netflixFlow]);
     props.history.push("/expenses");
@@ -43,12 +47,6 @@ export default function Netflix(props) {
           name="amount"
           type="text"
           placeholder="type Netflix €"
-          className="inputNetflix"
-        />
-        <input
-          name="date"
-          type="text"
-          placeholder="type date"
           className="inputNetflix"
         />
         <button type="submit" className="buttonNetflix">

@@ -8,7 +8,13 @@ export default function Other(props) {
     let propsotherFlow = props.otherFlow;
     props.setOther(props.other + amount);
     props.setMyMoney(props.myMoney - amount);
-    let date = String(e.target.date.value);
+
+    let date = new Date();
+    let dd = String(date.getDate()).padStart(2, "0");
+    let mm = String(date.getMonth() + 1).padStart(2, "0"); //January is 0!
+    let yyyy = date.getFullYear();
+    date = dd + "/" + mm + "/" + yyyy;
+
     let name = String(e.target.name.value);
     let id = propsotherFlow.length;
     props.setOtherFlow([{ amount, date, name, id }, ...propsotherFlow]);
@@ -48,12 +54,6 @@ export default function Other(props) {
           name="name"
           type="text"
           placeholder="type name"
-          className="inputOther"
-        />
-        <input
-          name="date"
-          type="text"
-          placeholder="type date"
           className="inputOther"
         />
         <button type="submit" className="buttonOther">

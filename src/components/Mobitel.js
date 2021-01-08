@@ -9,7 +9,11 @@ export default function Mobitel(props) {
     props.setMobitel(props.mobitel + amount);
     props.setMyMoney(props.myMoney - amount);
     props.setMyExpenses(props.myExpenses + amount);
-    let date = String(e.target.date.value);
+    let date = new Date();
+    let dd = String(date.getDate()).padStart(2, "0");
+    let mm = String(date.getMonth() + 1).padStart(2, "0"); //January is 0!
+    let yyyy = date.getFullYear();
+    date = dd + "/" + mm + "/" + yyyy;
     let id = propsmobitelFlow.length;
     props.setMobitelFlow([{ amount, date, id }, ...props.mobitelFlow]);
     props.history.push("/expenses");
@@ -43,12 +47,6 @@ export default function Mobitel(props) {
           name="amount"
           type="text"
           placeholder="type Mobitel €"
-          className="inputMobitel"
-        />
-        <input
-          name="date"
-          type="text"
-          placeholder="type date"
           className="inputMobitel"
         />
         <button type="submit" className="buttonMobitel">

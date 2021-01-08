@@ -8,7 +8,13 @@ export default function Vacation(props) {
         let propsvacationFlow = props.vacationFlow;
         props.setVacation(props.vacation + amount);
         props.setMyMoney(props.myMoney - amount);
-        let date = String(e.target.date.value);
+
+        let date = new Date();
+        let dd = String(date.getDate()).padStart(2, "0");
+        let mm = String(date.getMonth() + 1).padStart(2, "0"); //January is 0!
+        let yyyy = date.getFullYear();
+        date = dd + "/" + mm + "/" + yyyy;
+
         let name = String(e.target.name.value);
         let id = propsvacationFlow.length;
         props.setVacationFlow([{ amount, date, name, id }, ...props.vacationFlow]);
@@ -48,12 +54,6 @@ export default function Vacation(props) {
               name="name"
               type="text"
               placeholder="type name"
-              className="inputVacation"
-            />
-            <input
-              name="date"
-              type="text"
-              placeholder="type date"
               className="inputVacation"
             />
             <button type="submit" className="buttonVacation">

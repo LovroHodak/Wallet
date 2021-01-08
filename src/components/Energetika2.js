@@ -9,7 +9,11 @@ export default function Energetika2(props) {
     props.setEnergetika2(props.energetika2 + amount);
     props.setMyMoney(props.myMoney - amount);
     props.setMyExpenses(props.myExpenses + amount);
-    let date = String(e.target.date.value);
+    let date = new Date();
+    let dd = String(date.getDate()).padStart(2, "0");
+    let mm = String(date.getMonth() + 1).padStart(2, "0"); //January is 0!
+    let yyyy = date.getFullYear();
+    date = dd + "/" + mm + "/" + yyyy;
     let id = propsenergetika2Flow.length;
     props.setEnergetika2Flow([{ amount, date, id }, ...props.energetika2Flow]);
     props.history.push("/expenses");
@@ -43,12 +47,6 @@ export default function Energetika2(props) {
           name="amount"
           type="text"
           placeholder="type Energetika2 €"
-          className="inputE1"
-        />
-        <input
-          name="date"
-          type="text"
-          placeholder="type date"
           className="inputE1"
         />
         <button type="submit" className="buttonE1">
