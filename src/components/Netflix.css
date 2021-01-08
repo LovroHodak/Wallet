@@ -21,3 +21,8 @@
 .mapedSpecNetflix {
     border: 1px solid black;
 }
+
+.deleteButtonNetflix {
+    font-size: 20px;
+    margin: 5px auto;
+}

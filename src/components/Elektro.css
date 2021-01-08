@@ -21,3 +21,8 @@
 .mapedSpecElektro {
     border: 1px solid black;
 }
+
+.deleteButtonElekto {
+    font-size: 20px;
+    margin: 5px auto;
+}

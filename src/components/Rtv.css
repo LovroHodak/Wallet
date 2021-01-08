@@ -21,3 +21,9 @@
 .mapedSpecRtv {
     border: 1px solid black;
 }
+
+
+.deleteButtonRtv {
+    font-size: 20px;
+    margin: 5px auto;
+}

@@ -21,3 +21,8 @@
 .mapedSpecInternet {
     border: 1px solid black;
 }
+
+.deleteButtonInternet {
+    font-size: 20px;
+    margin: 5px auto;
+}

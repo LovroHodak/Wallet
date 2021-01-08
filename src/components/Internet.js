@@ -5,13 +5,36 @@ export default function Internet(props) {
   const addInternet = (e) => {
     e.preventDefault();
     let amount = Number(e.target.amount.value);
+    let propsinternetFlow = props.internetFlow;
     props.setInternet(props.internet + amount);
     props.setMyMoney(props.myMoney - amount);
     props.setMyExpenses(props.myExpenses + amount);
     let date = String(e.target.date.value);
-    props.setInternetFlow([{ amount, date }, ...props.internetFlow]);
+    let id = propsinternetFlow.length;
+    props.setInternetFlow([{ amount, date, id }, ...props.internetFlow]);
     props.history.push("/expenses");
   };
+
+  const deleteInternet = (internetId) => {
+    let filteredInternets = props.internetFlow.filter((lo1) => {
+      return lo1.id !== internetId;
+    });
+    props.setInternetFlow(filteredInternets);
+    let internetsAmount = filteredInternets.reduce(function (
+      accumulator,
+      currentValue
+    ) {
+      return accumulator + currentValue.amount;
+    },
+    0);
+    let propsinternetFlow = props.internetFlow;
+    let allInternets = propsinternetFlow.reduce(function (accumulator, currentValue) {
+      return accumulator + currentValue.amount;
+    }, 0);
+    props.setInternet(internetsAmount);
+    props.setMyMoney(props.myMoney + allInternets - internetsAmount);
+    props.setMyExpenses(props.myExpenses - allInternets + internetsAmount)
+  }
 
   return (
     <div>
@@ -34,15 +57,16 @@ export default function Internet(props) {
       </form>
       <div>
         <h2>Last added: </h2>
-        {props.internetFlow.map((transfer, i) => {
+        {props.internetFlow.map((transfer) => {
           return (
-            <div key={i} className="mapedSpecInternet">
+            <div key={transfer.id} className="mapedSpecInternet">
               <p>
                 Amount: <b>{transfer.amount}</b> €
               </p>
               <p>
                 Date: <b>{transfer.date}</b>
               </p>
+              <button onClick={() => deleteInternet(transfer.id)} className='deleteButtonInternet' >Delete</button>
             </div>
           );
         })}
